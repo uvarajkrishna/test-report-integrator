@@ -1,0 +1,8 @@
+<aspectj>
+    <aspects>
+        <aspect name="StepsAspects"/>
+    </aspects>
+    <weaver options="-nowarn -Xlint:ignore">
+<!--        <include within="com.csaa.*"/>-->
+    </weaver>
+</aspectj>

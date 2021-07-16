@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false" packagingData="true">
+    <timestamp key="bySecond" datePattern="MMM-dd-yyyy_hh-mm-ss"/>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %highlight(%-5level) %logger{5} - %msg%n%throwable</pattern>
+        </encoder>
+    </appender>
+    <appender name="LOG_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>target/test-results/logback/test-execution-${bySecond}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %-5level %logger{5} - %msg%n%throwable</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="HTML_FILE" class="ch.qos.logback.core.FileAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.html.HTMLLayout">
+                <pattern>%relative%thread%mdc%level%logger%msg</pattern>
+            </layout>
+        </encoder>
+        <file>target/test-results/logback/test-execution-${bySecond}.html</file>
+    </appender>
+
+    <logger name="ch.qos.logback" level="ERROR"/>
+    <logger name="org.reflections" level="ERROR"/>
+    <logger name="org.reflections" level="ERROR"/>
+    <logger name="org.thymeleaf" level="ERROR"/>
+
+    <!-- Strictly speaking, the level attribute is not necessary since -->
+    <!-- the level of the root level is set to DEBUG by default.       -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+         <appender-ref ref="LOG_FILE" />
+         <appender-ref ref="HTML_FILE" />
+    </root>
+</configuration>

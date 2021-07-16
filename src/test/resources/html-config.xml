@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+  <configuration>
+    <!-- report theme -->
+    <!-- standard, dark -->
+    <theme>standard</theme>
+    <!-- document encoding -->
+    <!-- defaults to UTF-8 -->
+    <encoding>UTF-8</encoding>
+    <!-- enable or disable timeline on dashboard -->
+    <enableTimeline>true</enableTimeline>
+    <!-- protocol for script and stylesheets -->
+    <!-- defaults to https -->
+    <protocol>https</protocol>
+    <!-- title of the document -->
+    <documentTitle>EAS Automation Report</documentTitle>
+    <!-- &lt;!&ndash; report name - displayed at top-nav &ndash;&gt;
+       <reportName>EAS Automation Report</reportName>-->
+    <reportName>Default Report Name</reportName>
+    <scripts>
+      <![CDATA[
+      ]]>
+    </scripts>
+    <!-- custom styles -->
+    <styles>
+      <![CDATA[
+            ]]>
+    </styles>
+    <styles>
+      <![CDATA[
+             .report-name { padding-left: 10px; } .report-name > img { float:none;height: 90%;margin-left: 0px;margin-top: 2px;width: auto; }
+            ]]>
+    </styles>
+  </configuration>
+</extentreports>
